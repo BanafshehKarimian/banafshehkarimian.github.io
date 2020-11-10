@@ -4,7 +4,7 @@ title: About
 permalink: /
 author_profile: true
 header:
-  overlay_image: assets/images/unsplash-image-1.jpg
+  overlay_image: unsplash-image-1.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
   #caption:
 redirect_from: 
@@ -12,10 +12,4 @@ redirect_from:
   - /about.html
 ---
 
-Master in Electrical and Computer Engineering from [TU Munich](https://www.ei.tum.de/en/welcome/). 
-Lead Developer at [Oculytics GmbH](https://oculytics.com/), brining AI-based machine vision to the food production and other industires.
-Previously working on trajectory planning for autonomous vehicles. Interested in robotics, software development, control theory and microcontrollers.
-
-If you enjoy my content please consider [supporting me](https://paypal.me/fpucher) for keeping the website updated and creating new projects:
-
-[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://paypal.me/fpucher)
+bio goes here
