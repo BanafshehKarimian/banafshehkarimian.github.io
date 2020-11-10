@@ -1,8 +1,11 @@
 ---
-layout: single
-title: About
-permalink: /about/
+permalink: /
+title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+excerpt: "About me"
 author_profile: true
+redirect_from: 
+  - /about/
+  - /about.html
 header:
   overlay_image: /assets/images/unsplash-image-1.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
