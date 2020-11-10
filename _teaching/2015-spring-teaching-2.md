@@ -1,20 +1,10 @@
 ---
-title: "Teaching experience 2"
+title: "Teaching Assistant in Algorithm Design and Analysis course"
 collection: teaching
-type: "Workshop"
-permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
-date: 2015-01-01
-location: "City, Country"
+type: "Undergraduate course"
+permalink: /teaching/2014-spring-teaching-1
+venue: "Department of computer engineering, IUST"
+date: 2019-01-01
+location: "Tehran, Iran"
 ---
-
-This is a description of a teaching experience. You can use markdown like any other post.
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
+[link](https://sauleh.github.io/ad97/)
