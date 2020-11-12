@@ -52,7 +52,7 @@ button:hover, a:hover {
 <h2 style="text-align:center"></h2>
 
 <div class="card">
-  <img src="https://github.com/BanafshehKarimian/banafshehkarimian.github.io/blob/master/images/500x300.png" alt="John" style="width:100%">
+  <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" alt="{{ author.name }}" style="width:100%">
   <h1>John Doe</h1>
   <p class="title">CEO & Founder, Example</p>
   <p>Harvard University</p>
