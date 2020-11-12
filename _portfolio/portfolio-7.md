@@ -1,6 +1,5 @@
 ---
-title: "Eye gaze keyboard"
-excerpt: "using python and openCV, we evaluated different approaches for detecting which key of the screen keyboard does the user looks at.<br/><img src='/images/gaze.png'>"
+title: "Implementation of Sonic Sega game"
+excerpt: "C++, SDL<br/><img src='/images/sonic.png'>"
 collection: portfolio
 ---
-[Github Link](https://github.com/BanafshehKarimian/EyeGazeKeyboard)
