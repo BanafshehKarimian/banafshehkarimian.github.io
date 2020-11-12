@@ -1,10 +1,3 @@
----
-layout: archive
-title: "Experience"
-permalink: /experience/
-author_profile: false
----
-
 
 ###Research Assistant
 * Research Assistant at data-flow laboratory
