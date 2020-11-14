@@ -1,6 +1,6 @@
 ---
 title: "Multi-agent robotic hand push and grasp"
-excerpt: "Python, Vrep_Pro, RL, Multi-agent Robotics<br/><img src='/images/height.png' class="center">"
+excerpt: "Python, Vrep_Pro, RL, Multi-agent Robotics<br/><img src='/images/height.png' >"
 collection: portfolio
 ---
 <p align="justify"> The main aim of this project was extending the existing visual pushing grasping project of the Princeton university to a multi-agent robotics environment.

@@ -1,6 +1,6 @@
 ---
 title: "Detection of heart disease using UCI data set"
-excerpt: "Python, Scikit-learn, ML<br/><img src='/images/uci.png' class="center">"
+excerpt: "Python, Scikit-learn, ML<br/><img src='/images/uci.png' >"
 collection: portfolio
 ---
 <p align="justify"> Aim of this project was to apply multiple hierarchical classification algorithms on UCI heart disease dataset to achieve a good performance. </p>
