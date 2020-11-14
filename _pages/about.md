@@ -13,9 +13,9 @@ redirect_from:
 ---
 Welcome to my personal website.
 
-You can find information about my academic background in this website. For a summary, I have received my Computer Engineering bachelors from Iran University of Science and Technology and currently, I am studying Machine Intelligence and Robotics masters at the University of Tehran.
+<p align="justify"> You can find information about my academic background in this website. For a summary, I have received my Computer Engineering bachelors from Iran University of Science and Technology and currently, I am studying Machine Intelligence and Robotics masters at the University of Tehran. </p>
 
-As you can read in my [research]("https://banafshehkarimian.github.io/research/") and [projects]("https://banafshehkarimian.github.io/projects/"), I have done research and projects in a wide range of fields such as Data Science, Machine Learning and NLP. But, I found myself more interested in the following fields and tried to extend my knowledge in these fields and I would love to do my master's thesis in these fields.
+As you can read in my [research](https://banafshehkarimian.github.io/research/) and [projects](https://banafshehkarimian.github.io/projects/), I have done research and projects in a wide range of fields such as Data Science, Machine Learning and NLP. But, I found myself more interested in the following fields and tried to extend my knowledge in these fields and I would love to do my master's thesis in these fields.
 
 * Robotics
   * Soft Robotics
