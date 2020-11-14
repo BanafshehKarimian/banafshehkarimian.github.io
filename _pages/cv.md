@@ -78,7 +78,7 @@ Language Skills
   * fluent : IELTS 7.5 (2018- 2020)
              GRE general 320 (2018- 2023)
 * Persian
-* native
+  * native
 
 Reference
 ======
