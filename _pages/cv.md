@@ -89,4 +89,5 @@ Reference
   * Assistant professor at Computer Engineering Department, Iran University of Science and Technology, Tehran, Iran
   * Microsoft Researcher, Misrosoft
   * E-mail: sauleh@iust.ac.ir
-<button name="button" onclick="https://banafshehkarimian.github.io/files/cv.pdf">download PDF</button>
+
+[download CV.PDF](https://banafshehkarimian.github.io/files/cv.pdf){: .btn}
