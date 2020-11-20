@@ -4,9 +4,9 @@ collection: publications
 permalink: /publication/MEGA
 excerpt: 'This paper is about predicting the best classifier combination for an unseen dataset using its characteristics. [more...](https://banafshehkarimian.gitHub.io/publication/MEGA)'
 date: 2020-10-01
-venue: 'Accepted to be published on Intelligent Data Analysis Journal'
+venue: 'Accepted to be published in Intelligent Data Analysis Journal'
 paperurl: 'http://banafshehkarimian.github.io/files/MEGA.pdf'
-citation: ' <i>TBA (To be published on Intelligent Data Analysis Journal)</i>'
+citation: ' <i>TBA (To be published in Intelligent Data Analysis Journal)</i>'
 ---
 <p align="justify"> Classifier combination through ensemble systems is one of the most effective approaches to improve the accuracy
 of classification systems. Ensemble systems are generally used to combine classifiers; However, selecting the best combination

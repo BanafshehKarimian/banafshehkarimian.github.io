@@ -19,6 +19,7 @@ Honors & Awards
 * Ranked 39th in the Master's National Universities Entrance Exam, in Computer Engineering, Artificial Intelligence
 * Eligible for applying to continue my education in the Master's Program at the Department of Computer Engineering  without taking the National Entrance Exam for Graduate Schools, as a reward for top students
 * Ranked 1st for four and top 4 for the remaining semesters, based on GPA, among 66 students of computer engineering department
+* Awarded as a top student (IUST), For all considered academic years, Selected based on GPA
 * Ranked 934th in the National Universities Entrance Exam, in Mathematics and Physics among near 200,000 Participants (top 0.5%)
 
 Publications

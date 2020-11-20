@@ -22,7 +22,6 @@ Welcome to my personal website.
 * Evolutionary Robotics
 * Legged Robotics
 * Surgical Robotics
-* bionics
 * Soft Robotics
 * Computer Vision
 * Machine Learning
