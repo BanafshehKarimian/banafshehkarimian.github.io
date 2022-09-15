@@ -1,10 +1,16 @@
 <html lang="en"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Overview</title>
+    <title>Advanced Usage</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LJS2EY950X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LJS2EY950X');
+</script>
 <link rel="icon" type="image/x-icon" href="/zero-md/favicon.ico">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Seaweed+Script&amp;text=<zero-md>&amp;display=swap">
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
@@ -31,20 +37,111 @@
     </style>
     <script defer="" src="https://cdn.jsdelivr.net/npm/@zerodevx/navaid@latest"></script>
     <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
-    
+    <script type="module">
+      const links = document.querySelectorAll('nav a')
+      const app = document.querySelector('zero-md')
+      const setTitle = title => { document.head.querySelector('title').innerText = title }
+      const setActive = () => links.forEach(a => a.classList.toggle('active', a.pathname === location.pathname))
+      let firstrun = true
+      const changePage = i => {
+        setActive()
+        if (firstrun) {
+          firstrun = false
+          return
+        }
+        setTitle(i.textContent)
+        app.src = i.pathname + 'readme.md'
+      }
+      const router = navaid('/', () => {
+        router.unlisten()
+        location.reload(true)
+      })
+      links.forEach(i => router.on(i.pathname, () => changePage(i)))
+      router.listen()
+    </script>
   <script src="https://cdn.jsdelivr.net/gh/markedjs/marked@2/marked.min.js"></script><script src="https://cdn.jsdelivr.net/gh/PrismJS/prism@1/prism.min.js" data-manual=""></script><script src="https://cdn.jsdelivr.net/gh/PrismJS/prism@1/plugins/autoloader/prism-autoloader.min.js"></script></head>
-  <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
-<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
-
-<!-- Load the element definition -->
-<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
-
-    <body class="pace-done bg-gray-50 text-gray-900 my-2"><div class="pace pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
-
+  <body class="pace-done bg-gray-50 text-gray-900 my-2"><div class="pace pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+    
+    <header style="display:flex;flex-direction:column;align-items:center;font-size:3.75rem;margin-top:0.75rem;">
+  <h1 style="font-family:'Seaweed Script',sans-serif">&lt;zero-md&gt;</h1>
+  <div style="margin-top:0.75rem;margin-bottom:1.5rem;">
+    <a href="https://github.com/zerodevx/zero-md" title="Fork me on Github">
+      <img src="https://img.shields.io/github/package-json/v/zerodevx/zero-md?style=for-the-badge&amp;logo=github&amp;label=fork+me+on+github" alt="version">
+    </a>
+  </div>
+</header>
+    <nav class="max-w-7xl mx-auto px-2 md:sticky md:top-0">
+      <div class="md:pl-2 md:float-right">
+        <ul class="bg-white border border-gray-200 rounded-md mb-2">
+          
+            <li class="h-10">
+              <a class="h-full flex items-center justify-center md:justify-start text-sm hover:bg-blue-50 px-4" href="/zero-md/">Overview</a>
+            </li>
+          
+            <li class="h-10">
+              <a class="h-full flex items-center justify-center md:justify-start text-sm hover:bg-blue-50 px-4" href="/zero-md/installation/">Installation</a>
+            </li>
+          
+            <li class="h-10">
+              <a class="h-full flex items-center justify-center md:justify-start text-sm hover:bg-blue-50 px-4" href="/zero-md/basic-usage/">Basic Usage</a>
+            </li>
+          
+            <li class="h-10">
+              <a class="h-full flex items-center justify-center md:justify-start text-sm hover:bg-blue-50 px-4 active" href="/zero-md/advanced-usage/">Advanced Usage</a>
+            </li>
+          
+            <li class="h-10">
+              <a class="h-full flex items-center justify-center md:justify-start text-sm hover:bg-blue-50 px-4" href="/zero-md/attributes-and-helpers/">Attributes &amp; Helpers</a>
+            </li>
+          
+            <li class="h-10">
+              <a class="h-full flex items-center justify-center md:justify-start text-sm hover:bg-blue-50 px-4" href="/zero-md/configuration/">Configuration</a>
+            </li>
+          
+            <li class="h-10">
+              <a class="h-full flex items-center justify-center md:justify-start text-sm hover:bg-blue-50 px-4" href="/zero-md/migration-guide/">Migration Guide</a>
+            </li>
+          
+            <li class="h-10">
+              <a class="h-full flex items-center justify-center md:justify-start text-sm hover:bg-blue-50 px-4" href="/zero-md/recipes/">Recipes</a>
+            </li>
+          
+            <li class="h-10">
+              <a class="h-full flex items-center justify-center md:justify-start text-sm hover:bg-blue-50 px-4" href="/zero-md/contributing/">Contributing</a>
+            </li>
+          
+        </ul>    
+      </div>
+    </nav>
 
     <main class="max-w-7xl mx-auto px-2">
-      <zero-md class="app bg-white border border-gray-200 rounded-md py-6 px-4 md:py-12 md:px-12" src="details.md">
-        
+      <zero-md class="app bg-white border border-gray-200 rounded-md py-6 px-4 md:py-12 md:px-12" src="readme.md">
+        <template data-merge="append">
+          <style>
+            .markdown-body pre>code {
+              font-size: 0.875rem;
+            }
+            @media (max-width: 640px) {
+              .markdown-body ul {
+                margin-left: 1.125rem;
+              }
+            }
+          </style>
+        </template>
+        <script type="text/markdown"># 404
+> Oops
+
+The requested page **cannot** be found.</script>            
+      </zero-md>
+    </main>
+
+    <footer style="text-align:center;font-size:0.875rem;margin-top:4rem;margin-bottom:0.75rem">
+  <p>ISC LICENSE</p>
+  <p style="font-size:0.75rem;color:#6b7280;">SITE GENERATED WITH <a href="https://github.com/zerodevx/zero-md-docs">ZERO-MD-DOCS</a></p>
+</footer>
   
 
 
