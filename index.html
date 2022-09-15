@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+	<script src="jquery.js"></script> 
+    <script> 
+    $(function(){
+      $("#includedContent").load("b.html"); 
+    });
+    </script> 
 </head>
 <body>
     <div id="mobile-menu-open" class="shadow-large">
@@ -81,6 +87,7 @@
         </div>
     </div>
     <!-- End #about -->
+     <div id="includedContent"></div>
     <div id="projects" class="background-alt">
         <h2 class="heading">Research</h2>
         <div class="container">
