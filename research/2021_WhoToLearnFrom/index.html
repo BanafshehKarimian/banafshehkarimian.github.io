@@ -5,12 +5,7 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LJS2EY950X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LJS2EY950X');
-</script>
+
 <link rel="icon" type="image/x-icon" href="/zero-md/favicon.ico">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Seaweed+Script&amp;text=<zero-md>&amp;display=swap">
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
@@ -37,28 +32,6 @@
     </style>
     <script defer="" src="https://cdn.jsdelivr.net/npm/@zerodevx/navaid@latest"></script>
     <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
-    <script type="module">
-      const links = document.querySelectorAll('nav a')
-      const app = document.querySelector('zero-md')
-      const setTitle = title => { document.head.querySelector('title').innerText = title }
-      const setActive = () => links.forEach(a => a.classList.toggle('active', a.pathname === location.pathname))
-      let firstrun = true
-      const changePage = i => {
-        setActive()
-        if (firstrun) {
-          firstrun = false
-          return
-        }
-        setTitle(i.textContent)
-        app.src = i.pathname + 'readme.md'
-      }
-      const router = navaid('/', () => {
-        router.unlisten()
-        location.reload(true)
-      })
-      links.forEach(i => router.on(i.pathname, () => changePage(i)))
-      router.listen()
-    </script>
   <script src="https://cdn.jsdelivr.net/gh/markedjs/marked@2/marked.min.js"></script><script src="https://cdn.jsdelivr.net/gh/PrismJS/prism@1/prism.min.js" data-manual=""></script><script src="https://cdn.jsdelivr.net/gh/PrismJS/prism@1/plugins/autoloader/prism-autoloader.min.js"></script></head>
   <body class="pace-done bg-gray-50 text-gray-900 my-2"><div class="pace pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
   <div class="pace-progress-inner"></div>
