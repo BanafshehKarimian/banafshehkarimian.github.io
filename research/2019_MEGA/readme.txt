@@ -1,0 +1,7 @@
+<p align="justify"> One of the most effective approaches to improve the accuracy
+of classification systems is using ensemble methods. However, selecting the best combination
+of individual classifiers is a challenging task. To address this issue we proposed our system MEGA, standing for using MEta-learning and a Genetic Algorithm for algorithm recommendation. MEGA has three main components: Training,
+Model Interpretation and Testing. The Training component extracts meta-features of each training dataset and uses a genetic
+algorithm to discover the best classifier combination. The Model Interpretation component interprets the relationships between
+meta-features and classifiers using a priori and multi-label decision tree algorithms. Finally, the Testing component uses a
+weighted k-nearest-neighbors algorithm to predict the best combination of classifiers for unseen datasets. For more information you can read our paper <a href="https://banafshehkarimian.github.io/publications/">Paria Golshanrad, Hossein Rahmani, Banafsheh Karimian, Fatemeh Karimkhani, and Gerhard Weiss. 2021. MEGA: Predicting the best classifier combination using meta-learning and a genetic algorithm. Intell. Data Anal. 25, 6 (2021), 1547–1563. https://doi.org/10.3233/IDA-205494</a>. </p>
