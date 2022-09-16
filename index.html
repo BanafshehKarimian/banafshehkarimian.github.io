@@ -182,40 +182,20 @@ algorithms, utility functions, and expertise. We then extend this method to MDP 
 		
             <div class="row">
 		<div class="w3-third w3-container w3-margin-bottom">
-		      <img src="/w3images/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+		      <img src="https://en.wikipedia.org/wiki/Reinforcement_learning#/media/File:Reinforcement_learning_diagram.svg" alt="Norway" style="width:100%" class="w3-hover-opacity">
 		      <div class="w3-container w3-white">
 			<p><b>Reinforcement Learning Algorithms</b></p>
-			<p>Implementation of some reinforcement learning algorithms:</p>
-			<ul>
-			<li>multi armed bandit:<ul>
-			<li>gradient preference based</li>
-			<li>Thompson Sampling</li>
-			<li>UCB</li>
-			<li>esilonGreedy</li>
-			</ul>
-			</li>
-			<li>policy iteration</li>
-			<li>SARSA</li>
-			<li>exp SARSA</li>
-			<li>Deep Q learning</li>
-			<li>n step tree</li>
-			</ul>
-			<p><a href="https://github.com/BanafshehKarimian/RL_algorithms">Github Link</a></p>
+			<p>Implementation of some reinforcement learning algorithms</p>
+			<p><a href="banafshehkarimian.github.io/projects/RL_algorithms/">Read More</a></p>
 		      </div>
 		</div>
 		<div class="w3-third w3-container w3-margin-bottom">
 		      <img src="/w3images/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
 		      <div class="w3-container w3-white">
 			<p><b>Image Captioning</b></p>
-			<p>We use <a href="https://www.kaggle.com/adityajn105/flickr8k">flickr8K</a> dataset that has 5 captions for each traing image.<br />
-			After adding start and end tokens to the caption and assigning an index to words, we embed the captions. The following two architecture are relatively used in training and testing the model. We compare results with and without freezing the reznet part of the architecture.<br />
-			<img src="https://github.com/BanafshehKarimian/Image-Captioning/blob/main/1.PNG" alt="training the model"><br />
-			<img src="https://github.com/BanafshehKarimian/Image-Captioning/blob/main/2.PNG" alt="testing the model"><br />
-			A sample of the result:<br /></p>
-			<p><p align="center">
-			  <img src="https://github.com/BanafshehKarimian/Image-Captioning/blob/main/resultsample.PNG" alt="A sample of the result"/>
+			<p>We use CNNs and LSTM to learn image captioning using <a href="https://www.kaggle.com/adityajn105/flickr8k">flickr8K</a> dataset
 			</p>
-			<a href="https://github.com/BanafshehKarimian/Image-Captioning">Github Link</a></p>
+			<a href="banafshehkarimian.github.io/projects/Image-Captioning">Read M</a></p>
 
 		      </div>
 		</div>
@@ -223,26 +203,10 @@ algorithms, utility functions, and expertise. We then extend this method to MDP 
 		      <img src="/w3images/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
 		      <div class="w3-container w3-white">
 			<p><b>TurtleSim Face Tracker</b></p>
-			<p>In this project we want to make the turtle in turtlesim move as our face moves and control it with our face. In order to do so, we define a new massage coordinate_msg that contains the x and y coordinate of a face. Check it using:</p>
-			<pre><code class="lang-console">rosmsg show <span class="hljs-keyword">package</span><span class="hljs-number">_n</span>ame/coordinate<span class="hljs-number">_m</span>sg
-			</code></pre>
-			<p>The sendfacetracker.py file is a publisher which finds the face using haarcascade and publishes the middle point of the found face using coordinate_msg. You can test it using:</p>
-			<pre><code class="lang-console">rosrun package_name sendfacetracker<span class="hljs-selector-class">.py</span>
-			rostopic echo /coordinate
-			</code></pre>
-			<p><br /> Next the subscriber node is coded in calculaternode.py which receives the coordinate of the face and the position of the turtle. It then publishes the speed the turtle need to move through calculating the distance of pose to its required location corresponding to the face.
-			<br />You can launch the project using:</p>
-			<pre><code class="lang-console">roslaucn package_name pckg_lauch.<span class="hljs-built_in">launch</span>
-			</code></pre>
-			<p><br />The followings are the rqt_graph and a sample movement of the turtle.<br /></p>
-			<p align="center">
-			  <img src="https://github.com/BanafshehKarimian/TurtleSim_FaceTracker/blob/main/result.png" />
-			</p>
-			<p align="center">
-			  <img src="https://github.com/BanafshehKarimian/TurtleSim_FaceTracker/blob/main/graph.PNG" />
+			<p>In this project we want to make the turtle in turtlesim move as our face moves and control it with our face.
 			</p>
 
-			<p><a href="https://github.com/BanafshehKarimian/TurtleSim_FaceTracker">Github Link</a></p>
+			<p><a href="banafshehkarimian.github.io/projects/TurtleSim_FaceTracker">Read More</a></p>
 
 		      </div>
 		    </div>
