@@ -31,3 +31,17 @@ markdown parser.
 
 
 ### Apply marked options during render
+## test
+### Append (or prepend) additional styles
+
+You can _merge_ any additional style templates into an instance of `<zero-md>` like this:
+
+
+### Dedent inline markdown
+
+You can _opt-in_ to apply a dedent function onto the inline markdown. The function _tries_ to remove
+the leading whitespace that would otherwise be incorrectly interpreted as a code block by the
+markdown parser.
+
+
+### Apply marked options during render
