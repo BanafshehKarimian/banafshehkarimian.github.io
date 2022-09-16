@@ -7,4 +7,3 @@ A sample of the result:<br />
 <p align="center">
   <img src="https://github.com/BanafshehKarimian/Image-Captioning/blob/main/resultsample.PNG" alt="A sample of the result"/>
 </p>
-[Github Link](https://github.com/BanafshehKarimian/Image-Captioning)
