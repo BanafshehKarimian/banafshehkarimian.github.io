@@ -1,13 +1,9 @@
 In this post the projects that I have done for the cognitive neuroscience course are presented.
 ### Project1
 In this project, I designed a test in order to investigate spatial heterogeneity in face perception and analyze whether the location of the stimuli has influence on detecting the gender using Psychophysics Toolbox. In the second phase, I first cleaned the data and added required columns and then explored data through plotting multiple bar charts. After that, we used multivariable linear regression to predict behavioral characteristics. We plotted psychometric function per subject next, and calculated PSE (point of subjective equivalence) per visual field, per location and per ecc (eccentricity). We observed that: 1) the response time is smaller for the first visual field. One example of psychometric function is as follows:
-<p align="center">
-  <img src="https://github.com/BanafshehKarimian/CognitiveNeuroscienceCourse/blob/main/Project1/pf.PNG" />
-</p>
+![image](https://user-images.githubusercontent.com/19387425/190799227-3aceb8dc-73c2-46b5-95dc-e8738562077a.png)
 The following figure demonstrates that for some locations subjects detected the stimuli as female more than others. They are more biased to female when PSE is closer to 1.
-<p align="center">
-  <img src="https://github.com/BanafshehKarimian/CognitiveNeuroscienceCourse/blob/main/Project1/loc.PNG" />
-</p>
+![image](https://user-images.githubusercontent.com/19387425/190799656-f88a2e92-98a6-43eb-a224-08c2e6dcbaf2.png)
 ### Project2
 In this project we implemented morris lecar, Hodgkin Huxley, LIF and WilsonCowan models that describe the initiation and propagation of action potentials in neurons.
 For murris lecar the following plot shows V w.r.t n for I before and after action potential. For I = Ith only one action potential is initiated and for I > Ith more are initiated.
