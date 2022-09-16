@@ -1,8 +1,3 @@
----
-title: "Thompson sampling"
-collection: portfolio
-excerpt: "Python, Thompson sampling<br/>"
----
 The thompson sampling is implemented for a 10 armed bandit with rewards similar to sutton barto's figure 2.1.
 * Reward class:
     * The Reward class inherits from RewardBase class and adds mean and variance of the reward distribution along with sum of all rewards received from this distribution and the number of times we got a sample of this reward.
