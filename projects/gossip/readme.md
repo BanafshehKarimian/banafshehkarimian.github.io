@@ -1,0 +1,2 @@
+We want to use gossip training in behavioral cloning for autonomous driving car. We add gossip training from "M. Blot, D. Picard, M. Cord, and N. Thome, “Gossip training for deep learning,” arXiv [cs.CV], 2016." to behavioral cloning network of "M. Bojarski et al., “End to end learning for self-driving cars,” arXiv [cs.CV], 2016.". The dataset is collected from Udacity driving simulator.<br />
+![network architecture](https://github.com/BanafshehKarimian/Gossip_Training_Behavioural_clonning_for_Self_Driving/blob/main/network%20arch.JPG)<br />
