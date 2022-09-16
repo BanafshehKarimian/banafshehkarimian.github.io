@@ -19,5 +19,3 @@ roslaucn package_name pckg_lauch.launch
 <p align="center">
   <img src="https://github.com/BanafshehKarimian/TurtleSim_FaceTracker/blob/main/graph.PNG" />
 </p>
-
-[Github Link](https://github.com/BanafshehKarimian/TurtleSim_FaceTracker)
