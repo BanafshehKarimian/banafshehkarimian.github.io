@@ -13,6 +13,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 	<script src="jquery.js"></script> 
+	<script> 
+    $(function(){
+      $("#includedContent").load("project_viewer.html"); 
+    });
+    </script> 
 	
 </head>
 <body>
@@ -167,9 +172,11 @@ algorithms, utility functions, and expertise. We then extend this method to MDP 
         <!-- End .education-block -->
     </div>
     <!-- End #publication -->
+<div id="includedContent"></div>
     <div id="projects" class="background-alt">
         <h2 class="heading">Projects</h2>
         <div class="container">
+		<div id="includedContent"></div>
             <div class="row">
                 <div class="project shadow-large">
                     <div class="project-image">
