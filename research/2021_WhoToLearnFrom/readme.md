@@ -36,7 +36,15 @@ Algorithm 1 shows the social loop that is followed at each step. The first thing
 ![image](https://user-images.githubusercontent.com/19387425/191490726-2b546e80-c377-4e03-9049-44ed2545c2c9.png)<br />
 Algorithm2 shows the observation update procedure. After observing actions and states for each agent in the society, we check if the observed state is not in the state memory of that agent, or not close to seen states in continoues case. If true, then the state and action are added as new state and action. Otherwise, if the state, or a close state in continoues case, exists, the action memory is updated. The action memory update calculates the frequency of actions for disceret actions and action average for continuous ones.<br />
 ![image](https://user-images.githubusercontent.com/19387425/191525447-1d1e59af-3c74-4235-9cc5-081fb0594938.png)<br />
-
+### First Results
+We test our method on BRAX, which is a differentiable physics engine that simulates environments made up of rigid bodies, joints, and actuators. The advantage of BRAX is that we can run it on google COLAB that gives us access to GPU and TPU. We first focus on the ANT environment, which has continuous state and action spaces with a dimension of 87 and 8. The reward is calculated from the following formulas.<br />
+Reward =  forward_reward - ctrl_cost - contact_cost + 1<br />
+forward_reward = (x_after - x_before) / config.dt<br />
+ctrl_cost = .5 * sum(square(action))<br />
+contact_cost = (0.5 * 1e-3 *sum(square(clip(contact.vel, -1, 1))))<br />
+We add social learning to DDPG and test it in a problem with continuous state and action spaces. The following figure shows the Cumulative reward of each 1000 trials learning individually using DDPG and social+DDPG learning in two societies: a) 1 agent that is 50% expert and 50% random, 1 totally random agent and b)  agent that is 50% expert and 50% random, 30 totally random agents. We can see that the social + DDPG algorithm converges faster than the individual DDPG algorithm.
+![image](https://user-images.githubusercontent.com/19387425/191530459-16a49990-2000-4295-843d-a843ac30c3c7.png)
+![image](https://user-images.githubusercontent.com/19387425/191530526-3ce35362-6afa-43a8-b37e-5aad02aa19b9.png)
 
 ### Reference
 <a name="1">[1]</a> Albert Bandura and Richard H Walters. Social learning theory, volume 1. Englewood cliﬀs Prentice Hall, 1977.<br />
