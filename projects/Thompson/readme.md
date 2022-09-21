@@ -13,6 +13,7 @@ The thompson sampling is implemented for a 10 armed bandit with rewards similar 
 
 ## result
 Plotting the rewards distribution for few trials in addition to percent of optimal action selection and regret.
-<p align="center">
-  <img src="https://github.com/BanafshehKarimian/Thompson_sampling/blob/master/result.png" />
-</p>
+![image](https://user-images.githubusercontent.com/19387425/191543816-f258529f-1818-40a8-b3fd-61a0c6497b49.png)
+![image](https://user-images.githubusercontent.com/19387425/191543886-6f5db0e8-2d36-4602-8dae-a1b737fbeb44.png)
+![image](https://user-images.githubusercontent.com/19387425/191543967-2c9ff073-c092-4808-a13b-f2006abfb7c4.png)
+![image](https://user-images.githubusercontent.com/19387425/191544007-991ad92c-a20d-410b-ab7c-29af3a6d60b4.png)
