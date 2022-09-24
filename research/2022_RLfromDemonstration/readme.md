@@ -140,14 +140,14 @@ decision process (MDP), defined by ![image](https://user-images.githubuserconten
 ![image](https://user-images.githubusercontent.com/19387425/192095210-efe424a5-476f-463d-aff2-bf94f700c148.png) is the discount factor, $\mu$ is initial state
 distribution, and $S$ and $A$ denote the state space and action space
 respectively that are defined for discrete and continues cases as
-follows:
-![image](https://user-images.githubusercontent.com/19387425/192095127-d937e935-ad54-4c4e-93b7-75c6c5ba93e5.png)
+follows:<br />
+![image](https://user-images.githubusercontent.com/19387425/192095127-d937e935-ad54-4c4e-93b7-75c6c5ba93e5.png)<br />
 A policy ![image](https://user-images.githubusercontent.com/19387425/192095225-9ddffecb-c2f0-47a7-a79e-e0786c0919b5.png) is map from a state to
 action probabilities and a trajectory
 $\tau = <s_0,s_1,a_1,...,s_T,a_T>$, where $T$ denotes terminal state,
 can be generated from $\pi$. Reinforcement learning algorithms try to
 find an optimal policy $\pi^*$ that maximizes the discounted return,
-i.e.: ![image](https://user-images.githubusercontent.com/19387425/192095141-34de867a-af94-4f85-9883-db8733048811.png) Our
+i.e.:<br /> ![image](https://user-images.githubusercontent.com/19387425/192095141-34de867a-af94-4f85-9883-db8733048811.png) <br /> Our
 agent has initially access to pairs of heterogeneous demonstrations
 ($Demo = \{demo_i;i \in (0,D)\}$) collected from multiple agents
 performing multiple tasks. These demonstrations can be considered as the
