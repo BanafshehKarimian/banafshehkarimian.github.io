@@ -15,7 +15,7 @@ The environment we created has the following features:
       * Station of Drones: Yellow Square
   * The fire propagates according to the direction of the wind using probability of transition</br>
 ![image](https://user-images.githubusercontent.com/19387425/190756177-5ad193a1-2db5-42fd-947a-e4f0d65df8bd.png)</br>
-![Environemnt](env.gif "Environemnt")</br>
+![image](https://user-images.githubusercontent.com/19387425/192101751-f2e50223-3131-4749-9656-a02791a621a0.png)</br>
 ### Agent
 Our agent is a simplified model of UAV drones. Its actions are: retarding the fire and Moving to 8 neighbors. Its sensors are a camera with 3X3 environment type and 3X3 environment state and a radio wich communicates and receives initial mean fire position (updated with camera data).
 The agents group has the following structure:
