@@ -194,4 +194,16 @@ approximator of the reward function.
 
 Soft Actor Critic or SAC is an off policy policy gradient method that
 uses value function approximation to better train the policy
-[@haarnoja2018soft].
+[@haarnoja2018soft]. SAC
+maximizes long-term rewards in addition to action randomness which the objective function can be formulated as:
+![image](https://user-images.githubusercontent.com/19387425/192099718-3ab6b7d4-0162-4c1a-9171-c0ed51eebb9c.png)<br/>
+The method has a policy network, that returns mean and variance which the actions are sampled from. The update of the policy network is based on Q value estimations, which is itself another network. The Q value update is also related to value function which is again estimated using another network. The objective function of policy network, Q network and value network are as follows:
+![image](https://user-images.githubusercontent.com/19387425/192099763-682ff14f-2715-48a9-a67a-b40a8674d9fa.png)<br/>
+# Method Ideas
+In this section we will introduce our ideas in using heterogeneous demonstrations.
+## Extracting common reward and pre train the policy
+We can assume that each of the demonstrations, $demo_i$, is from another MDP with a reward function that can be divided in two functions i.e.:<br/>
+![image](https://user-images.githubusercontent.com/19387425/192099822-a93251ab-10b7-47ca-b761-420333313a36.png)<br/>
+Where $F(s,a)$ is common for each demonstration. An example of such reward function is a robotic arm performing different tasks. The robot must avoid collision and minimize the consumed energy in all of the tasks (common function $F$) but must learn to perform different tasks ($G_i$). Another example can be a self driving car learning different tasks such as parking the car or driving to a destination. In all these tasks the car must avoid accidents and follow traffic rules.<br/>
+Our first idea is to assume that our agent's reward follows the same structure. We can then extract $F(s,a)$ from demonstrations and instead of learning from scratch we can train a base policy that maximizes $F(s,a)$. First, we will mathematically check that for what sort of problems starting from this initial policy results in a better learning than starting from a random policy and then we will discuss our idea.
+
