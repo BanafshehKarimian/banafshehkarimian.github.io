@@ -206,4 +206,71 @@ We can assume that each of the demonstrations, $demo_i$, is from another MDP wit
 ![image](https://user-images.githubusercontent.com/19387425/192099822-a93251ab-10b7-47ca-b761-420333313a36.png)<br/>
 Where $F(s,a)$ is common for each demonstration. An example of such reward function is a robotic arm performing different tasks. The robot must avoid collision and minimize the consumed energy in all of the tasks (common function $F$) but must learn to perform different tasks ($G_i$). Another example can be a self driving car learning different tasks such as parking the car or driving to a destination. In all these tasks the car must avoid accidents and follow traffic rules.<br/>
 Our first idea is to assume that our agent's reward follows the same structure. We can then extract $F(s,a)$ from demonstrations and instead of learning from scratch we can train a base policy that maximizes $F(s,a)$. First, we will mathematically check that for what sort of problems starting from this initial policy results in a better learning than starting from a random policy and then we will discuss our idea.
+### Idea
 
+We can extract the common reward using Inverse Reinforcement Learning
+and optimization methods and then pre train the policy on the extracted
+reward. Although this method is accurate, it needs enough amount of
+demonstration from each demonstrator and sufficient number of
+demonstrators.\
+For this method, we first need to extract the reward $R_i(s,a)$ for each
+demonstrator $D_i$ and then find $F$ from the resulted $R_i$. At the end
+we need to pre train a policy on $F$. We will discuss the mentioned
+steps with more details.\
+As mentioned before, IRL methods extract reward from set of
+demonstrations. Maximum Entropy IRL [@ziebart2008maximum], Guided Cost
+Learning [@finn2016guided] and Adversarial IRL [@finn2016connection] are
+from most used IRL methods. We use Adversarial IRL (AIRL) for its
+ability to approximate reward function using only state trajectories. We
+could also use other methods, assuming we have actions in our
+demonstrations.\
+After extracting $R_i$ for each demonstrator $D_i$, we have to extract
+$F$ from them. One way to do so is to average all $R_i$, but this
+methods needs a sufficient number of demonstrators, which may not be
+provided to us. Another method is using optimization methods. The
+following loss function needs to be minimized for us to obtain $f$:
+![image](https://user-images.githubusercontent.com/19387425/192100692-97ba2eef-33c6-4bb1-9407-35e3cba449b4.png) <br/> The
+$|r_i - f - g_i|^2$ insures that the equation $r_i = f + g_i$ holds for
+every demonstrator, and $D_{KL}(f||g_i)$ insures that $f$ is as
+disentangled as possible from $g_i$. When the $f$ is extracted, we can
+pre-train our model on $f$.
+The other idea is to skip calculating the common reward and use the
+demonstrators policy using Free Energy Minimization method
+[@Ortega2015InformationTheoreticBR]. We could assume that the policies
+we obtained from observations are points on the policy space that can
+guide us to the optimal policy. As we mentioned before, the free energy
+of a probability distribution $P$ is defined as:
+![image](https://user-images.githubusercontent.com/19387425/192100788-19ef464f-71f1-4433-be3c-e8e4bab4f598.png) <br/>
+which maximizes the expected reward and minimizes the energy cost.
+In reinforcement learning $P$ can be a representative of our policy and $Q$ can be assumed as a behavioural policy. If we had one demonstrator we could have assumed its policy as $Q$, but here we have multiple demonstrators.<br/>
+We could maximize our expected reward similar to SAC using minimizing ![image](https://user-images.githubusercontent.com/19387425/192100838-e0a6f7ac-2253-4c40-95f4-5e5babc7d081.png) and define our information cost as the weighted some of our policy to the policies of the demonstrators or ![image](https://user-images.githubusercontent.com/19387425/192100865-4a102748-607b-4208-acec-717f2862f121.png). Thus, we change the policy objective function of SAC as follows:
+![image](https://user-images.githubusercontent.com/19387425/192100891-291e5223-37a5-43fb-b8a3-eb24ee7e20c6.png)<br/>
+As it is shown in Algorithm[\[alg:cap\]](#alg:cap){reference-type="ref"
+reference="alg:cap"}, after rolling out and saving the experience in the
+common experience buffer, we use the experience to update the
+demonstrated policies using off policy SAC and use the above formula to
+update our policy. The problem with above formula is that if the other
+policies are spread across the policy space, one of the KL distance
+terms could become infinity and decreasing the weights will not prevent
+the objective function to become infinity. We could fix this problem
+using either smoothing the demonstration policies or transforming the
+demonstrated policies to a space that their are not so far from each
+other.
+
+::: algorithm
+::: algorithmic
+policy of each demonstrator $\pi_i$ initialize $\alpha_i$, $\phi$,
+$\psi$, $\hat{\psi}$, $\theta$, common buffer $D$ Roll out policy
+$\pi_{in}$ $k$ times add experience to $D$ sample experience from $D$
+update $\pi_i$ using SAC sample experience from $D$
+$J_V(\phi) = E_{S_t~D}[\frac{1}{2}*(V_\psi(s_t)-E_{a_t~\pi_{\phi}}[Q_\theta(s_t, a_t)-log \pi_{phi}(a_t|s_t)])^2]$
+$J_Q(\theta) = E_{(s_t,a_t)~D}[\frac{1}{2}(Q_\theta(s_t,a_t)-r(s_t, a_t) - \gamma*E_{s_{t+1}~p}[V_{\hat{\psi}}(s_{t+1})])^2]$
+$J_\pi(\phi) = \nabla_{\phi} E_{S_t~D, a_t~\pi_\phi}[D_{KL}(\pi_\phi||\frac{exp(Q_{\theta}(s_t, .))}{Z_{\theta}})+\sum \lambda_i * D_{KL}(\pi_\phi||\pi_i)]$
+$\psi = \psi - \lambda_V*\nabla_{\psi}J_V(\psi)$
+$\theta = \theta - \lambda_Q*\nabla_{\theta}J_Q(\theta)$
+$\phi = \phi - \lambda_\pi*\nabla_\phi J_\pi(\phi)$
+$\hat{\psi} = \tau*\psi + (1-\tau)*\hat{\psi}$
+:::
+
+[]{#algo1 label="algo1"}
+:::
