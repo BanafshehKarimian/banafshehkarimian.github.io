@@ -184,8 +184,8 @@ $\pi_{\theta}$ is updated using the advantage function multiplied by the
 gradient of the log of the policy: <br \>
 ![image](https://user-images.githubusercontent.com/19387425/192095325-1ecdecf2-9dff-44e5-8739-7022ca142de1.png) <br \>
  We can use
-$r(s,a,sp) = A(s,a)$ and set the reward as follows:<br \>
-![image](https://user-images.githubusercontent.com/19387425/192095349-7d827757-45fd-4507-a3be-163c20cc0f30.png)<br \>
+$r(s,a,sp) = A(s,a)$ and set the reward as follows:<br />
+![image](https://user-images.githubusercontent.com/19387425/192095349-7d827757-45fd-4507-a3be-163c20cc0f30.png)<br />
  Where $h(s)$ is a
 shaping term to avoid undesired shaping of $g(s)$ that is a function
 approximator of the reward function.
