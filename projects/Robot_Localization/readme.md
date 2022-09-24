@@ -3,6 +3,6 @@ In this project, we used Particle Filter algorithm to localize our Vector robot 
 * utility.py: some useful functions including Line_initersection() gets two lines and returns their intersection point, if existed, and is used in Laser() to find the laser output of each particle.
 * controllerv2.py: Has the Robot class with similar methods to the simulator class for the real robot.
 * partile_filter.py: The particle filter class that initiates random particles, moves robot and particles, reads their laser, calculates particle weights, and resamples particles. For resampling we used augmented Monte Carlo for addressing kidnapping.
-<br />Videos of results are uploaded to this repository.
+<br />
 ![image](https://user-images.githubusercontent.com/19387425/192108427-5b902dc2-b086-4284-b4e7-f28c41c51a59.png)
 ![image](https://user-images.githubusercontent.com/19387425/192108429-f7da7d69-b750-4876-9271-bf9adad4f9fc.png)
