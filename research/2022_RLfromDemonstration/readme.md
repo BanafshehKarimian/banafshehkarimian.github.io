@@ -245,8 +245,7 @@ which maximizes the expected reward and minimizes the energy cost.
 In reinforcement learning $P$ can be a representative of our policy and $Q$ can be assumed as a behavioural policy. If we had one demonstrator we could have assumed its policy as $Q$, but here we have multiple demonstrators.<br/>
 We could maximize our expected reward similar to SAC using minimizing ![image](https://user-images.githubusercontent.com/19387425/192100838-e0a6f7ac-2253-4c40-95f4-5e5babc7d081.png) and define our information cost as the weighted some of our policy to the policies of the demonstrators or ![image](https://user-images.githubusercontent.com/19387425/192100865-4a102748-607b-4208-acec-717f2862f121.png). Thus, we change the policy objective function of SAC as follows:
 ![image](https://user-images.githubusercontent.com/19387425/192100891-291e5223-37a5-43fb-b8a3-eb24ee7e20c6.png)<br/>
-As it is shown in Algorithm[\[alg:cap\]](#alg:cap){reference-type="ref"
-reference="alg:cap"}, after rolling out and saving the experience in the
+As it is shown in Algorithm1, after rolling out and saving the experience in the
 common experience buffer, we use the experience to update the
 demonstrated policies using off policy SAC and use the above formula to
 update our policy. The problem with above formula is that if the other
@@ -256,21 +255,4 @@ the objective function to become infinity. We could fix this problem
 using either smoothing the demonstration policies or transforming the
 demonstrated policies to a space that their are not so far from each
 other.
-
-::: algorithm
-::: algorithmic
-policy of each demonstrator $\pi_i$ initialize $\alpha_i$, $\phi$,
-$\psi$, $\hat{\psi}$, $\theta$, common buffer $D$ Roll out policy
-$\pi_{in}$ $k$ times add experience to $D$ sample experience from $D$
-update $\pi_i$ using SAC sample experience from $D$
-$J_V(\phi) = E_{S_t~D}[\frac{1}{2}*(V_\psi(s_t)-E_{a_t~\pi_{\phi}}[Q_\theta(s_t, a_t)-log \pi_{phi}(a_t|s_t)])^2]$
-$J_Q(\theta) = E_{(s_t,a_t)~D}[\frac{1}{2}(Q_\theta(s_t,a_t)-r(s_t, a_t) - \gamma*E_{s_{t+1}~p}[V_{\hat{\psi}}(s_{t+1})])^2]$
-$J_\pi(\phi) = \nabla_{\phi} E_{S_t~D, a_t~\pi_\phi}[D_{KL}(\pi_\phi||\frac{exp(Q_{\theta}(s_t, .))}{Z_{\theta}})+\sum \lambda_i * D_{KL}(\pi_\phi||\pi_i)]$
-$\psi = \psi - \lambda_V*\nabla_{\psi}J_V(\psi)$
-$\theta = \theta - \lambda_Q*\nabla_{\theta}J_Q(\theta)$
-$\phi = \phi - \lambda_\pi*\nabla_\phi J_\pi(\phi)$
-$\hat{\psi} = \tau*\psi + (1-\tau)*\hat{\psi}$
-:::
-
-[]{#algo1 label="algo1"}
-:::
+![image](https://user-images.githubusercontent.com/19387425/192100983-b806a0a4-da01-457a-ba56-7872d5f2faa4.png)
