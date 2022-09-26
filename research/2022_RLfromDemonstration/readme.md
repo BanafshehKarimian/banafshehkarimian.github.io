@@ -254,6 +254,6 @@ terms could become infinity and decreasing the weights will not prevent
 the objective function to become infinity. We could fix this problem
 using either smoothing the demonstration policies or transforming the
 demonstrated policies to a space that their are not so far from each
-other. In the following figure, assume the optimal policy as star and demonstrated policies as blue points. These blue points refine and get closer to the optimal policy and our policy tries to maximize its expeted reward and get closer to the demonstrated policies.
-![image](https://user-images.githubusercontent.com/19387425/192268709-f487ffec-0c27-4ac0-a322-77bd56727a9a.png)
+other. In the following figure, assume the optimal policy as star and demonstrated policies as blue points. These blue points refine and get closer to the optimal policy and our policy tries to maximize its expeted reward and get closer to the demonstrated policies.<br \>
+![image](https://user-images.githubusercontent.com/19387425/192268709-f487ffec-0c27-4ac0-a322-77bd56727a9a.png)<br \>
 ![image](https://user-images.githubusercontent.com/19387425/192100983-b806a0a4-da01-457a-ba56-7872d5f2faa4.png)
