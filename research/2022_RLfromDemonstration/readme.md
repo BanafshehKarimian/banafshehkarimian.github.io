@@ -45,32 +45,32 @@ maximizes long-term rewards in addition to action randomness which the objective
 The method has a policy network, that returns mean and variance which the actions are sampled from. The update of the policy network is based on Q value estimations, which is itself another network. The Q value update is also related to value function which is again estimated using another network. The objective function of policy network, Q network and value network are as follows:
 ![image](https://user-images.githubusercontent.com/19387425/192099763-682ff14f-2715-48a9-a67a-b40a8674d9fa.png)<br/>
 ## Free Energy
-Free energy is used as the objective function for bounded-rational decision-makings and is used to model information constrained decision-making. The goal in it is to minimize the information cost while maximizing the expected utility as follows:
-![image](https://user-images.githubusercontent.com/19387425/204818487-186e0429-2953-4d65-a358-9c3e099b4d15.png)
+Free energy is used as the objective function for bounded-rational decision-makings and is used to model information constrained decision-making. The goal in it is to minimize the information cost while maximizing the expected utility as follows:</br>
+![image](https://user-images.githubusercontent.com/19387425/204818487-186e0429-2953-4d65-a358-9c3e099b4d15.png)</br>
 Where U (s, a) is the utility function, πβ (a|s) is our policy that we are learning, α is the inverse
 temperature that controls the trade-off between information cost and maximizing utility, and πβ is the
 behaviour policy, or prior knowledge.
 ## Proposed Method
 The idea is to use the demonstrators policy  using Free Energy Minimization method \[Ortega2015InformationTheoreticBR\]. We could assume that the policies we obtained from observations are points on the policy space that can guide us to the optimal policy. 
-As we mentioned before, the free energy of a policy is defined as:
-![image](https://user-images.githubusercontent.com/19387425/204844767-e0d4db0c-993f-41fb-b5c0-97792cf8174a.png)
-In reinforcement learning π(a, s) can be a representative of our policy and πβ (a|s) can be assumed as a behavioural policy. If we had one demonstrator we could have assumed its policy as πβ (a|s), but here we have multiple demonstrators.
+As we mentioned before, the free energy of a policy is defined as:</br>
+![image](https://user-images.githubusercontent.com/19387425/204844767-e0d4db0c-993f-41fb-b5c0-97792cf8174a.png)</br>
+In reinforcement learning π(a, s) can be a representative of our policy and πβ (a|s) can be assumed as a behavioural policy. If we had one demonstrator we could have assumed its policy as πβ (a|s), but here we have multiple demonstrators.</br>
 We could maximize our expected reward similar to SAC using minimizing DKL(πφ|| exp(Qθ (st,.))
-Zθ ) and define our information cost as the weighted some of our policy to the policies of the demonstrators or ∑ λi ∗ DKL(πφ||πi). Thus, we change the policy objective function of SAC as follows:
-![image](https://user-images.githubusercontent.com/19387425/204845144-f2eb0774-6fe3-4b1f-9914-3bd49c289e68.png)
+Zθ ) and define our information cost as the weighted some of our policy to the policies of the demonstrators or ∑ λi ∗ DKL(πφ||πi). Thus, we change the policy objective function of SAC as follows:</br>
+![image](https://user-images.githubusercontent.com/19387425/204845144-f2eb0774-6fe3-4b1f-9914-3bd49c289e68.png)</br>
 However, The problem with above formula is that if the other policies are spread across the policy
 space, one of the KL distance terms could become infinity and decreasing the weights will not prevent
 the objective function to become infinity. Thus, we need to define or select a behavioural policy
 using demonstrated policies. We will show in the result that the best method is to use off-policy
 evaluation and set the policy with maximum evaluated utility as our behavioural policy. In simple
 words, it means that to choose the policy that is the closest to the optimal policy as our behaviour
-policy that we want to get close to. Thus, we will write the policy loss as follows:
-![image](https://user-images.githubusercontent.com/19387425/204845272-f94ed75d-56b6-4326-8b48-2a756335b768.png)
+policy that we want to get close to. Thus, we will write the policy loss as follows:</br>
+![image](https://user-images.githubusercontent.com/19387425/204845272-f94ed75d-56b6-4326-8b48-2a756335b768.png)</br>
 Where πβ is the policy of the demonstrator with maximum evaluated utility, using off-policy method.
 As it is shown in Algorithm1, after rolling out and saving the experience in the common experience
 buffer, we use the experience to update the demonstrated policies using off policy SAC, and use off
 policy evaluation to evaluate them. Then we set the demonstrated policy with maximum evaluated
-utility as the behaviour policy and use the above formula to update our policy.
+utility as the behaviour policy and use the above formula to update our policy.</br>
 ![image](https://user-images.githubusercontent.com/19387425/204845465-74a34cde-4c0c-4812-b7bd-3203a4b7a8d4.png)
 ## Result
 In order to test our method, we need to design our own environments, and we use PyBullet to design
