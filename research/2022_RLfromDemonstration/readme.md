@@ -3,33 +3,24 @@ We assume that each demonstrator's policy is a point in the policy space that ca
 
 # Problem Formulation
 
-In this section, we are going to mathematically formulate the problem
-that we intend to address in our further studies. We consider a Markov
-decision process (MDP), defined by ![image](https://user-images.githubusercontent.com/19387425/192095160-e4db8e0a-1281-4cbd-97cf-08ac1834cfb4.png), in which
-![image](https://user-images.githubusercontent.com/19387425/192095169-6c20df51-55aa-40f5-944c-2cb50866ff79.png)
- is the reward function,
-![image](https://user-images.githubusercontent.com/19387425/192095188-9132ef94-14d7-43d5-963a-6cf5734a6214.png)
- is the transition function,
-![image](https://user-images.githubusercontent.com/19387425/192095210-efe424a5-476f-463d-aff2-bf94f700c148.png) is the discount factor, $\mu$ is initial state
-distribution, and $S$ and $A$ denote the state space and action space
-respectively that are defined for discrete and continues cases as
-follows:<br />
+In this section, we are going to mathematically formulate the problem that we intend to address in
+our further studies. We consider a Markov decision process (MDP), defined by < S, A, P, R, γ, μ >,
+in which R : S × A → IR is the reward function, P : S × A × S → [0, 1] is the transition function,
+γ ∈ (0, 1) is the discount factor, μ is initial state distribution, and S and A denote the state space and
+action space respectively that are defined for discrete and continues cases as follows:<br />
 ![image](https://user-images.githubusercontent.com/19387425/192095127-d937e935-ad54-4c4e-93b7-75c6c5ba93e5.png)<br />
-A policy ![image](https://user-images.githubusercontent.com/19387425/192095225-9ddffecb-c2f0-47a7-a79e-e0786c0919b5.png) is map from a state to
-action probabilities and a trajectory
-tau = <s_0,s_1,a_1,...,s_T,a_T>, where T denotes terminal state,
-can be generated from pi. Reinforcement learning algorithms try to
-find an optimal policy pi* that maximizes the discounted return,
-i.e.:<br /> ![image](https://user-images.githubusercontent.com/19387425/192095141-34de867a-af94-4f85-9883-db8733048811.png) <br /> Our
-agent has initially access to pairs of heterogeneous demonstrations
-Demo = {demo_i; i in (0,D)} collected from multiple agents
-performing multiple tasks. These demonstrations can be considered as the
-input of our problem or they can be derived from a policy or a data set
-of videos, V = {v_1, ..., v_k}, where $v_i$ is video of an agent
-performing a task. We first assume that these demonstrations are from
-another MDP with isomorphic transition function $P$, state space and
-action space, but different reward function. We can further analyse the
-case that state space and action space is also different.
+A policy π : S × A → [0, 1] is map from a state to action probabilities and a trajectory τ =<
+s0, s1, a1, ..., sT , aT >, where T denotes terminal state, can be generated from π. Reinforcement
+learning algorithms try to find an optimal policy π∗ that maximizes the discounted return, i.e.:<br /> 
+![image](https://user-images.githubusercontent.com/19387425/192095141-34de867a-af94-4f85-9883-db8733048811.png) <br /> 
+Our agent has initially access to pairs of heterogeneous demonstrations (Demo = {demoi; i ∈
+(0, D)}) collected from multiple agents performing multiple tasks. These demonstrations can be
+considered as the input of our problem or they can be derived from a policy or a data set of videos,
+V = {v1, ..., vk}, where vi is video of an agent performing a task. We first assume that the policy of
+demonstrators are extracted from the demonstrations, Π = {πd1, ..., πdk}, and these demonstrations
+are from another MDP with isomorphic transition function P , state space and action space, but
+different reward function. We can further analyse the case that state space and action space is also
+different.</br>
 Our main idea is to minimize the information cost through minimizing the distance of our policy to a behaviour policy, in addition to maximizing the expected utility, similar to Free Energy methods. We do this by adding a new term to the policy loss of Soft Actor Critique, which is an off-policy method and tries to maximize the expected utility.
 
 # preliminaries
