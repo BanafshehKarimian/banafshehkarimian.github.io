@@ -1,5 +1,6 @@
 Reinforcement Learning, although has plenty of advantages and applications, is time-consuming and sample inefficient in many problems. Learning from Demonstrations, which alone is limited to only reach what it observes, is used together with Reinforcement Learning to improve learning in many applications, including but not limited to robot learning and self driving cars. However, in most of the literature, it is assumed that the provided demonstrations are optimal and if not optimal, are sub optimal, or at least, are performing what our agent wants to do, with different qualities. This is time consuming and costly to obtain in many tasks and requires human effort. In this work, we are going to use a heterogeneous set of demonstrations that are not directly related to our agent's goal, as behavioural policies, in the mentioned applications. In order to do so, we add a new term to the policy loss off Soft Actor Critique method, using Free Energy framework.
 We assume that each demonstrator's policy is a point in the policy space that can guide us to improve our learning, similar to the following figure, and we will choose a behaviour policy to bias our decisions towards it. We use the idea of Free Energy frame work \cite{Ortega2015InformationTheoreticBR}, and evaluate different methods of finding a behavioural policy that decreases the cost of policy search. We show that assuming the demonstrator with maximum evaluated return, evaluated using off policy evaluation methods, and update the behavioural policy, reduces the search cost considerably. 
+![image](https://user-images.githubusercontent.com/19387425/205277478-15eb5752-9e9e-4235-99f9-e2363ac17c80.png)
 
 # Problem Formulation
 
@@ -33,7 +34,7 @@ uses value function approximation to better train the policy
 [@haarnoja2018soft]. SAC
 maximizes long-term rewards in addition to action randomness which the objective function can be formulated as:
 ![image](https://user-images.githubusercontent.com/19387425/192099718-3ab6b7d4-0162-4c1a-9171-c0ed51eebb9c.png)<br/>
-The method has a policy network, that returns mean and variance which the actions are sampled from. The update of the policy network is based on Q value estimations, which is itself another network. The Q value update is also related to value function which is again estimated using another network. The objective function of policy network, Q network and value network are as follows:
+The method has a policy network, that returns mean and variance which the actions are sampled from. The update of the policy network is based on Q value estimations, which is itself another network. The Q value update is also related to value function which is again estimated using another network. The objective function of policy network, Q network and value network are as follows:</br>
 ![image](https://user-images.githubusercontent.com/19387425/192099763-682ff14f-2715-48a9-a67a-b40a8674d9fa.png)<br/>
 ## Free Energy
 Free energy is used as the objective function for bounded-rational decision-makings and is used to model information constrained decision-making. The goal in it is to minimize the information cost while maximizing the expected utility as follows:</br>
@@ -78,5 +79,4 @@ We let the agent to train for 300 trials and repeat it 10 times. The result of c
 SAC method with our method is visible at Figure 2. We can see that our method improved SAC
 considerably. Also, it is obvious that the SAC was unable to learn the task, considering its inability to
 achieve the goal, in contrast to our method that was able to successfully learn the pick and place task
-in limited trials.
-![image](https://user-images.githubusercontent.com/19387425/204846245-4e418c5c-83a8-43fd-bbe5-3422fdf3a93a.png)
+in limited trials.</br>![image](https://user-images.githubusercontent.com/19387425/204846245-4e418c5c-83a8-43fd-bbe5-3422fdf3a93a.png)
