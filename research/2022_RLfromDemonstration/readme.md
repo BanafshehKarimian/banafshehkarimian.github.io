@@ -37,7 +37,8 @@ maximizes long-term rewards in addition to action randomness which the objective
 The method has a policy network, that returns mean and variance which the actions are sampled from. The update of the policy network is based on Q value estimations, which is itself another network. The Q value update is also related to value function which is again estimated using another network. The objective function of policy network, Q network and value network are as follows:</br>
 ![image](https://user-images.githubusercontent.com/19387425/192099763-682ff14f-2715-48a9-a67a-b40a8674d9fa.png)<br/>
 ## Free Energy
-Free energy is used as the objective function for bounded-rational decision-makings and is used to model information constrained decision-making. The goal in it is to minimize the information cost while maximizing the expected utility as follows:</br>
+
+Looking again at the above figure, Our main purpose was to reach to the optimal policy, the star, from our initial policy, the red point. We want to decrease the cost of searching for the optimal policy using the policy of demonstrators, the blue points. The idea is to use the Free Energy Minimization method and assume that the policies we obtained from observations can guide us to the optimal policy, like a behaviour policy in Free Energy.  As we mentioned before, the free energy of a policy is defined as:</br>
 ![image](https://user-images.githubusercontent.com/19387425/204818487-186e0429-2953-4d65-a358-9c3e099b4d15.png)</br>
 Where U (s, a) is the utility function, πβ (a|s) is our policy that we are learning, α is the inverse
 temperature that controls the trade-off between information cost and maximizing utility, and πβ is the
