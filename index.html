@@ -129,6 +129,64 @@
         </div>
     </div>
     <!-- End #experience -->
+	<div id="publication">
+        <h2 class="heading">Publication</h2>
+	        <div class="education-block">
+            <h3>Learning Task-Agnostic Representations through Multi-Teacher Distillation</h3>
+            <span class="education-date">NeurIPS 2025</span>
+            <h4>Philippe Formont*, Maxime Darrin*, Banafsheh Karimian*, Jackie CK Cheung, Eric Granger, Ismail Ben Ayed, Mohammadhadi Shateri, Pablo Piantanida</h4>
+            <p>Casting complex inputs into tractable representations is a critical step across various fields. Diverse embedding models emerge from differences in architectures, loss functions, input modalities and datasets, each capturing unique aspects of the input. Multi-teacher distillation leverages this diversity to enrich representations but often remains tailored to specific tasks. We introduce a task-agnostic framework based on a ``majority vote" objective function. We demonstrate that this function is bounded by the mutual information between the student and the teachers' embeddings, leading to a task-agnostic distillation loss that eliminates dependence on task-specific labels or prior knowledge. Comprehensive evaluations across text, vision models, and molecular modeling show that our method effectively leverages teacher diversity, resulting in representations enabling better performance for a wide range of downstream tasks such as classification, clustering, or regression. Additionally, we train and release state-of-the-art embedding models, enhancing downstream performance in various modalities.
+                           </p> <a href="https://neurips.cc/virtual/2025/loc/san-diego/poster/115301">Link</a>
+        </div>
+        <!-- End .education-block -->
+	<div class="education-block">
+            <h3>CLIP-IT: CLIP-based Pairing of Histology Images with Privileged Textual Information</h3>
+            <span class="education-date">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2026)</span>
+            <h4>Banafsheh Karimian, Giulia Avanzato, Soufiane Belharbi, Alexis Guichemerre, Luke McCaffrey, Mohammadhadi Shateri, Eric Granger</h4>
+            <p>Multimodal learning has shown promise in medical imaging, combining complementary modalities like images and text. Vision-language models (VLMs) capture rich diagnostic cues but often require large paired datasets and prompt- or text-based inference, limiting their practicality due to annotation cost, privacy, and compute demands. Crucially, available free unpaired external text, like pathology reports, can still provide complementary diagnostic cues if semantically relevant content is retrievable per image. To address this, we introduce CLIP-IT, a novel framework that relies on rich unpaired text reports. Specifically, CLIP-IT uses a CLIP model pre-trained on histology image-text pairs from a separate dataset to retrieve the most relevant unpaired textual report for each image in the downstream unimodal dataset. These reports, sourced from the same disease domain and tissue type, form pseudo-pairs that reflect shared clinical semantics rather than exact alignment. Knowledge from these texts is distilled into the vision model during training, while LoRA-based adaptation mitigates the semantic gap between unaligned modalities. At inference, only the vision model is used, keeping overhead low while still benefiting from multimodal training without requiring paired data in the downstream dataset. Experiments on histology image datasets confirm that CLIP-IT consistently improves classification accuracy over both unimodal and multimodal CLIP-based baselines in most cases, without the burden of per-dataset paired annotation or inference-time complexity.
+                           </p> <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Karimian_CLIP-IT_CLIP-based_Pairing_of_Histology_Images_with_Privileged_Textual_Information_WACV_2026_paper.pdf">Link</a>
+        </div>
+        <!-- End .education-block -->
+        <div class="education-block">
+            <h3>Who to Learn from: A Preference-based Method for Social Reinforcement Learning</h3>
+            <span class="education-date"> </span>
+            <h4>Banafsheh Karimian, Amir Hosein Mesbah*, Erfun Mirzaie*, Seyed Pouya Shariatpanahi, Reshad Hosseini, Majid Nili Ahmadabadi</h4>
+            <p>
+                Reinforcement Learning (RL) is mainly inspired by studies on animal and human learning.
+However, RL methods suﬀer higher regret in comparison to natural learners in real-world
+tasks. This is partly due to the lack of social learning in RL agents. We propose a social
+learning method for improving the performance of RL agents for the multi-armed bandit
+setting. The social agent observes other agents’ decisions, while their rewards are private.
+The agent uses a preference-based method, similar to the policy gradient learning method,
+to fnd if there are any agents in the heterogeneous society worth learning from their
+policies to improve its performance. The heterogeneity is the result of diversity in learning
+algorithms, utility functions, and expertise. We compare our method with the state-ofthe-art studies and demonstrate that it results in higher performance in most scenarios.
+We also show that performance improvement increases with the problem complexity and
+is inversely correlated with the population of unrelated agents.            </p> <a href="https://github.com/BanafshehKarimian/SocialLearning/blob/main/paperpdf.pdf">Link</a>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>MEGA Predicting the Best Classifier Combination Using Meta-Learning and a Genetic Algorithm</h3>
+            <span class="education-date">Intelligent Data Analysis Journal, vol. 25, no. 6, pp. 1547-1563, 2021</span>
+            <h4><i>P. Golshanrad, H. Rahmani, B. Karimian, F. Karimkhani, and G. Weiss, “MEGA: Predicting the best classifier combination using meta-learning and a genetic algorithm,” Intell. Data Anal., vol. 25, no. 6, pp. 1547–1563, 2021.</i></h4>
+            <p align="justify"> Classifier combination through ensemble systems is one of the most effective approaches to improve the accuracy
+of classification systems. Ensemble systems are generally used to combine classifiers; However, selecting the best combination
+of individual classifiers is a challenging task. In this paper, we propose an efficient assembling method that employs both
+meta-learning and a genetic algorithm for the selection of the best classifiers. Our method is called MEGA, standing for
+using MEta-learning and a Genetic Algorithm for algorithm recommendation. MEGA has three main components: Training,
+Model Interpretation and Testing. The Training component extracts meta-features of each training dataset and uses a genetic
+algorithm to discover the best classifier combination. The Model Interpretation component interprets the relationships between
+meta-features and classifiers using a priori and multi-label decision tree algorithms. Finally, the Testing component uses a
+weighted k-nearest-neighbors algorithm to predict the best combination of classifiers for unseen datasets. We present extensive
+experimental results that demonstrate the performance of MEGA. MEGA achieves superior results in a comparison of three
+other methods and, most importantly, is able to find novel interpretable rules that can be used to select the best combination of
+classifiers for an unseen dataset. </p>
+		<a href="https://content.iospress.com/articles/intelligent-data-analysis/ida205494">Link</a>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #publication -->
     <div id="research" class="background-alt">
         <h2 class="heading">Research</h2>
         <div class="container">
@@ -190,64 +248,7 @@ weighted k-nearest-neighbors algorithm to predict the best combination of classi
     <!-- End #projects -->
     
 
-<div id="publication">
-        <h2 class="heading">Publication</h2>
-	        <div class="education-block">
-            <h3>Learning Task-Agnostic Representations through Multi-Teacher Distillation</h3>
-            <span class="education-date">NeurIPS 2025</span>
-            <h4>Philippe Formont*, Maxime Darrin*, Banafsheh Karimian*, Jackie CK Cheung, Eric Granger, Ismail Ben Ayed, Mohammadhadi Shateri, Pablo Piantanida</h4>
-            <p>Casting complex inputs into tractable representations is a critical step across various fields. Diverse embedding models emerge from differences in architectures, loss functions, input modalities and datasets, each capturing unique aspects of the input. Multi-teacher distillation leverages this diversity to enrich representations but often remains tailored to specific tasks. We introduce a task-agnostic framework based on a ``majority vote" objective function. We demonstrate that this function is bounded by the mutual information between the student and the teachers' embeddings, leading to a task-agnostic distillation loss that eliminates dependence on task-specific labels or prior knowledge. Comprehensive evaluations across text, vision models, and molecular modeling show that our method effectively leverages teacher diversity, resulting in representations enabling better performance for a wide range of downstream tasks such as classification, clustering, or regression. Additionally, we train and release state-of-the-art embedding models, enhancing downstream performance in various modalities.
-                           </p> <a href="https://neurips.cc/virtual/2025/loc/san-diego/poster/115301">Link</a>
-        </div>
-        <!-- End .education-block -->
-	<div class="education-block">
-            <h3>CLIP-IT: CLIP-based Pairing of Histology Images with Privileged Textual Information</h3>
-            <span class="education-date">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2026)</span>
-            <h4>Banafsheh Karimian, Giulia Avanzato, Soufiane Belharbi, Alexis Guichemerre, Luke McCaffrey, Mohammadhadi Shateri, Eric Granger</h4>
-            <p>Multimodal learning has shown promise in medical imaging, combining complementary modalities like images and text. Vision-language models (VLMs) capture rich diagnostic cues but often require large paired datasets and prompt- or text-based inference, limiting their practicality due to annotation cost, privacy, and compute demands. Crucially, available free unpaired external text, like pathology reports, can still provide complementary diagnostic cues if semantically relevant content is retrievable per image. To address this, we introduce CLIP-IT, a novel framework that relies on rich unpaired text reports. Specifically, CLIP-IT uses a CLIP model pre-trained on histology image-text pairs from a separate dataset to retrieve the most relevant unpaired textual report for each image in the downstream unimodal dataset. These reports, sourced from the same disease domain and tissue type, form pseudo-pairs that reflect shared clinical semantics rather than exact alignment. Knowledge from these texts is distilled into the vision model during training, while LoRA-based adaptation mitigates the semantic gap between unaligned modalities. At inference, only the vision model is used, keeping overhead low while still benefiting from multimodal training without requiring paired data in the downstream dataset. Experiments on histology image datasets confirm that CLIP-IT consistently improves classification accuracy over both unimodal and multimodal CLIP-based baselines in most cases, without the burden of per-dataset paired annotation or inference-time complexity.
-                           </p> <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Karimian_CLIP-IT_CLIP-based_Pairing_of_Histology_Images_with_Privileged_Textual_Information_WACV_2026_paper.pdf">Link</a>
-        </div>
-        <!-- End .education-block -->
-        <div class="education-block">
-            <h3>Who to Learn from: A Preference-based Method for Social Reinforcement Learning</h3>
-            <span class="education-date"> </span>
-            <h4>Banafsheh Karimian, Amir Hosein Mesbah*, Erfun Mirzaie*, Seyed Pouya Shariatpanahi, Reshad Hosseini, Majid Nili Ahmadabadi</h4>
-            <p>
-                Reinforcement Learning (RL) is mainly inspired by studies on animal and human learning.
-However, RL methods suﬀer higher regret in comparison to natural learners in real-world
-tasks. This is partly due to the lack of social learning in RL agents. We propose a social
-learning method for improving the performance of RL agents for the multi-armed bandit
-setting. The social agent observes other agents’ decisions, while their rewards are private.
-The agent uses a preference-based method, similar to the policy gradient learning method,
-to fnd if there are any agents in the heterogeneous society worth learning from their
-policies to improve its performance. The heterogeneity is the result of diversity in learning
-algorithms, utility functions, and expertise. We compare our method with the state-ofthe-art studies and demonstrate that it results in higher performance in most scenarios.
-We also show that performance improvement increases with the problem complexity and
-is inversely correlated with the population of unrelated agents.            </p> <a href="https://github.com/BanafshehKarimian/SocialLearning/blob/main/paperpdf.pdf">Link</a>
-        </div>
-        <!-- End .education-block -->
 
-        <div class="education-block">
-            <h3>MEGA Predicting the Best Classifier Combination Using Meta-Learning and a Genetic Algorithm</h3>
-            <span class="education-date">Intelligent Data Analysis Journal, vol. 25, no. 6, pp. 1547-1563, 2021</span>
-            <h4><i>P. Golshanrad, H. Rahmani, B. Karimian, F. Karimkhani, and G. Weiss, “MEGA: Predicting the best classifier combination using meta-learning and a genetic algorithm,” Intell. Data Anal., vol. 25, no. 6, pp. 1547–1563, 2021.</i></h4>
-            <p align="justify"> Classifier combination through ensemble systems is one of the most effective approaches to improve the accuracy
-of classification systems. Ensemble systems are generally used to combine classifiers; However, selecting the best combination
-of individual classifiers is a challenging task. In this paper, we propose an efficient assembling method that employs both
-meta-learning and a genetic algorithm for the selection of the best classifiers. Our method is called MEGA, standing for
-using MEta-learning and a Genetic Algorithm for algorithm recommendation. MEGA has three main components: Training,
-Model Interpretation and Testing. The Training component extracts meta-features of each training dataset and uses a genetic
-algorithm to discover the best classifier combination. The Model Interpretation component interprets the relationships between
-meta-features and classifiers using a priori and multi-label decision tree algorithms. Finally, the Testing component uses a
-weighted k-nearest-neighbors algorithm to predict the best combination of classifiers for unseen datasets. We present extensive
-experimental results that demonstrate the performance of MEGA. MEGA achieves superior results in a comparison of three
-other methods and, most importantly, is able to find novel interpretable rules that can be used to select the best combination of
-classifiers for an unseen dataset. </p>
-		<a href="https://content.iospress.com/articles/intelligent-data-analysis/ida205494">Link</a>
-        </div>
-        <!-- End .education-block -->
-    </div>
-    <!-- End #publication -->
     <div id="projects" class="background-alt">
         <h2 class="heading">Projects</h2>
         <div class="container">
